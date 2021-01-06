@@ -16,31 +16,34 @@ public class GenericDemo {
 
         Pair<Integer> doub = new Pair<>(1, 2);
         System.out.println(doub.toString());
+
+        PairTV<String, Double> computer = new PairTV<>("Lenovo", 7299.88);
+        System.out.println(computer.getFirst() + ", " + computer.getSecond());
     }
 }
 
-class Pair<T> {
-    public T first;
-    public T second;
+class Pair<A> {
+    public A first;
+    public A second;
 
-    public Pair (T first, T second) {
+    public Pair (A first, A second) {
         this.first = first;
         this.second = second;
     }
 
-    public T getFirst() {
+    public A getFirst() {
         return first;
     }
 
-    public T getSecond() {
+    public A getSecond() {
         return second;
     }
 
-    public void setFirst(T first) {
+    public void setFirst(A first) {
         this.first = first;
     }
 
-    public void setSecond(T second) {
+    public void setSecond(A second) {
         this.second = second;
     }
 
@@ -49,4 +52,22 @@ class Pair<T> {
        return "first:" + first + ", second:" + second;
     }
 
+}
+
+class PairTV<T, V> {
+    T first;
+    V second;
+
+    public PairTV(T first, V second) {
+        this.first = first;
+        this.second = second;
+    }
+
+    public T getFirst() {
+        return first;
+    }
+
+    public V getSecond() {
+        return second;
+    }
 }
